@@ -11,8 +11,8 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    assetModuleFilename: 'images/[hash][ext][query]',
+    filename: '[name].js',
+    assetModuleFilename: 'images/[name][ext]',
     clean: true,
   },
   devtool: 'source-map',
@@ -85,6 +85,11 @@ const config = {
       title: 'Battleship',
       filename: 'index.html',
       template: 'src/template.html'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from:'src/assets', to:'images'}
+      ]
     }),
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
