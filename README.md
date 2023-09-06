@@ -1,2 +1,2 @@
 # OdinBattleship
-Bbattleship game created for Thte Odin Project exercise
+Battleship game created for Thte Odin Project exercise
