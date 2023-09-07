@@ -1,0 +1,86 @@
+Game:
+- LOAD PAGE
+  - create page layout (header, footer, main game div)
+  - create form for user to submit user name
+    - check input 
+      - display error for invalid name: no spaces, only letters, no more than 50 characters
+    - save name as variable for later use
+
+- LOAD GAME
+  
+  - create mesage box
+    - create function to display a message in this box(reusable)
+
+  - create draggable ships container with images
+
+  - create grid for user
+    - use reusable function to create a 10x10 grid with coordinates A-J / 1-10
+    
+  - inform user to place the ships in grid
+
+    - ships can be rotated when clicked ?
+
+    - save ship the coordinates (reusable)
+
+    - keep track of the number of ships placed (check if user placed all the ships)
+      - yes: it's computer turn to place ships
+      - no: wait (inform the user)
+
+  - when all ships are placed, the computer will place his ships
+    - use the grid creator function to create computer grid
+    - create function to place ships random
+    - save foreach ships coordinates (reuse function)
+
+- START GAME
+  - add event listner on computer grid
+  - create player turn variable
+  - user click on computer grid
+     - checkHit function:
+        - check if the cell already hitted?
+          - yes: 
+              - check if ship is located there
+                    - yes: 
+                        - register hit on the ship object
+                        - check if ship has remaining hits:
+                          - if no: show ship on the grid;
+                          - if yes: add red mark on the grid;
+                        - check if the player turn has available ships
+                          - if yes: change turn to the other player
+                          - if no: END GAME
+                    - no:
+                      - add gray mark on cell
+                      - change turn
+          - no: don't register, don't change turn
+
+- END GAME:
+  - show winner
+  - display replay action
+
+
+Components:
+- header: create div with background and insertit in page
+- main div to be used for form  / game
+- footer div
+- form for username
+  - check form function
+- ships container with draggable images
+- create gameboard function
+- keep track of player turn
+- create ships classes:
+  - owner, id/name, lenght, image background, hit count, hit function will increase number of hits, isSunk function
+- place ships function (reusable for players)
+
+Game functions
+- receive attack:
+  - check if cell already used
+  - check if coordinates belongs to a ship object
+  - place mark on cell depending if is a ship there or not
+  - call ship id/name and increase hits
+    - check if is isSunk
+    - show it on grid (only if belongs to computer)
+    - check if all ships of the player are isSunk
+- switch turn
+- end game
+  - display winner
+  - display replay button
+
