@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const config = {
   mode: 'development',
@@ -88,7 +89,7 @@ const config = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        {from:'src/assets', to:'images'}
+        {from:'src/assets', to:'images', noErrorOnMissing: true}
       ]
     }),
     new MiniCssExtractPlugin(),
