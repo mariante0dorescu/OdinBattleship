@@ -1,5 +1,29 @@
+@use "_reset";
+@use "_normalize";
+
 $primary-color: white;
 $bg: rgb(255, 0, 0);
 body{
   //background-color: $bg;
+}
+
+
+
+.gameboards{
+  display: flex;
+  gap: 2rem;
+}
+
+.gameboard{
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  
+
+  .block{
+    width: 20px;
+    height: 20px;
+    background-color: aliceblue;
+    outline: 1px solid gray;
+  }
 }
