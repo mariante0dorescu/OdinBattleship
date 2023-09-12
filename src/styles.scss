@@ -3,11 +3,16 @@
 
 $primary-color: white;
 $bg: rgb(255, 0, 0);
-body{
-  //background-color: $bg;
+
+.messages{
+  margin-bottom: 20px;
+  width: 440px;
+  height: 50px;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 .gameboards{
   display: flex;
@@ -26,4 +31,39 @@ body{
     background-color: aliceblue;
     outline: 1px solid gray;
   }
+}
+
+.ships{
+  margin-top: 20px;
+  width: 440px;
+  height: 50px;
+  background-color: yellow;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div{
+    height: 20px;
+    margin: 15px;
+  }
+}
+
+.destroyer {
+  background-color: brown;
+
+}
+
+.submarine{
+  background-color: pink;
+
+}
+
+.cruiser{
+  background-color: red;
+
+}
+
+.battleship{
+  background-color: green;
 }
