@@ -41,7 +41,7 @@ export default class UI {
     const container = document.querySelector('.container');
     const gameboards = document.createElement('div');
     gameboards.classList.add('gameboards');
-    gameboards.appendChild(this.createGameboard('user'))
+    gameboards.appendChild(this.createGameboard('player'))
     gameboards.appendChild(this.createGameboard('computer'))
     container.appendChild(gameboards)
   }
